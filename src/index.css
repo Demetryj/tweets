@@ -1,5 +1,19 @@
 @import-normalize;
 
+:root {
+  --primary-font-color: #ebd8ff;
+  --secondary-font-color: #373737;
+  --line-bg-color: #ebd8ff;
+  --main-bg-color: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+  --button-color: #ebd8ff;
+  --button-accent-color: #5cd3a8;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
