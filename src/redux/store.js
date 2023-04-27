@@ -15,6 +15,7 @@ import { usersReducer } from "./users/usersSlice";
 const usersPersistConfig = {
   key: "users",
   storage,
+  whitelist: ["items"],
 };
 
 export const store = configureStore({
