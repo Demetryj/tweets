@@ -3,7 +3,7 @@ import {
   selectUsers,
   selectIsLoading,
   selectError,
-} from "../../redux/users/selectors";
+} from "../redux/users/selectors";
 
 export const useUsers = () => {
   const users = useSelector(selectUsers);
