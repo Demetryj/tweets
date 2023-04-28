@@ -14,16 +14,29 @@
   --button-accent-color: #5cd3a8;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
+html {
   box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  margin: 0;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -56,6 +69,6 @@ button {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
