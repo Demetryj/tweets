@@ -1,5 +1,5 @@
 import { useUsers } from '../../hooks/useUsers';
-import { UserCard } from '../TweetCard/UserCard';
+import { UserCard } from '../UserCard';
 import css from './ListUserCard.module.css';
 
 export const ListUserCard = () => {
