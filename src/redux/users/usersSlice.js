@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   error: null,
   following: [],
+  page: 1,
 };
 
 const usersSlice = createSlice({
@@ -26,6 +27,9 @@ const usersSlice = createSlice({
         state.following.splice(index, 1);
       }
     },
+    changePage(state, action) {
+      state.page = action.payload;
+    },
   },
 
   extraReducers: builder => {
@@ -34,9 +38,9 @@ const usersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getUsers.fulfilled, (state, action) => {
-        state.items = action.payload;
         state.isLoading = false;
         state.error = null;
+        state.items.push(...action.payload);
       })
       .addCase(getUsers.rejected, (state, action) => {
         state.isLoading = false;
@@ -45,5 +49,5 @@ const usersSlice = createSlice({
   },
 });
 
-export const { changeFollowing } = usersSlice.actions;
+export const { changeFollowing, changePage } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;
