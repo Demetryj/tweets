@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -8,14 +8,14 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { usersReducer } from "./users/usersSlice";
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { usersReducer } from './users/usersSlice';
 
 const usersPersistConfig = {
-  key: "users",
+  key: 'users',
   storage,
-  whitelist: ["items"],
+  whitelist: ['following'],
 };
 
 export const store = configureStore({
@@ -23,7 +23,7 @@ export const store = configureStore({
     users: persistReducer(usersPersistConfig, usersReducer),
   },
 
-  middleware: (getDefaultMiddleware) => [
+  middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
