@@ -4,6 +4,7 @@ import {
   selectIsLoading,
   selectError,
   selectFollowing,
+  selectPage,
 } from '../redux/users/selectors';
 
 export const useUsers = () => {
@@ -11,6 +12,7 @@ export const useUsers = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const following = useSelector(selectFollowing);
+  const page = useSelector(selectPage);
 
-  return { users, isLoading, error, following };
+  return { users, isLoading, error, following, page };
 };
