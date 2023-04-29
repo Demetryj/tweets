@@ -1,14 +1,16 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import {
   selectUsers,
   selectIsLoading,
   selectError,
-} from "../redux/users/selectors";
+  selectFollowing,
+} from '../redux/users/selectors';
 
 export const useUsers = () => {
   const users = useSelector(selectUsers);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const following = useSelector(selectFollowing);
 
-  return { users, isLoading, error };
+  return { users, isLoading, error, following };
 };
