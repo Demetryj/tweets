@@ -1,18 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getUsers } from "./operations";
+import { createSlice } from '@reduxjs/toolkit';
+import { getUsers } from './operations';
 
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
+  following: [],
 };
 
 const usersSlice = createSlice({
-  name: "users",
+  name: 'users',
   initialState,
-  extraReducers: (builder) => {
+  reducers: {
+    changeFollowing(state, action) {
+      const user = state.items.filter(user => user.id === action.payload.id);
+      user[0].followers = action.payload.followers;
+
+      if (action.payload.follow) {
+        state.following.push(action.payload);
+      } else {
+        const index = state.following.findIndex(
+          item => item.id === action.payload.id
+        );
+
+        state.following.splice(index, 1);
+      }
+    },
+  },
+
+  extraReducers: builder => {
     builder
-      .addCase(getUsers.pending, (state) => {
+      .addCase(getUsers.pending, state => {
         state.isLoading = true;
       })
       .addCase(getUsers.fulfilled, (state, action) => {
@@ -27,4 +45,5 @@ const usersSlice = createSlice({
   },
 });
 
+export const { changeFollowing } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;
