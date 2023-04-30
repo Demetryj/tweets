@@ -1,9 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import { lazy } from "react";
-import HomePage from "../pages/Home";
-
-const TweetsPage = lazy(() => import("../pages/Tweets"));
+import { Routes, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import HomePage from '../pages/Home/Home';
+import TweetsPage from '../pages/Tweets/Tweets';
 
 export const App = () => {
   return (
