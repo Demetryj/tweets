@@ -10,7 +10,9 @@ export const Button = ({
 }) => {
   return (
     <button
-      className={clsx(css[variant], { [css.isFollowing]: following })}
+      className={clsx(css[variant], css.button, {
+        [css.isFollowing]: following,
+      })}
       type={type}
       onClick={onClick}
     >
