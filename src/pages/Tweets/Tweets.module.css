@@ -1,3 +1,12 @@
-.sectionTweets {
+.container {
   padding: 30px;
+}
+
+.error {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 22px;
+  text-align: center;
+
+  color: var(--red-color);
 }
