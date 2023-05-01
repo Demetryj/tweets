@@ -1,5 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from '../pages/Home/Home';
 import TweetsPage from '../pages/Tweets/Tweets';
 
